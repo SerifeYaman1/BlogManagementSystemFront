@@ -1,0 +1,33 @@
+<body>
+    <div class="container">
+        <div class="card" *ngFor="let post of posts">
+            <div class="card-img">
+                <img src="/assets/card/pexels-sanaan-3075993.jpg" alt="">
+            </div>
+            <div class="card-body">
+                <span class="card-category">Teknoloji</span>
+                <h4>{{post.title}}</h4>
+                <p>{{post.content}}</p>
+                <div class="user">
+                    <img src="/assets/card/pexels-sanaan-3075993.jpg" alt="">
+                    <div class="user-info">
+                        <h5>{{post.authorName}}</h5>
+                        <small>{{post.releaseDate}}</small>
+                        <div class="blog-metas">
+                            <div class="meta">
+                                <i class="ri-eye-line"></i>2100
+                            </div>
+                            <div class="meta">
+                                <i class="ri-heart-3-line"></i>{{post.likesCount}}
+                            </div>
+                            <div class="meta">
+                                <i class="ri-chat-3-line"></i>{{post.commentsCount}}
+                            </div>
+                        </div>
+                    </div>
+                    <a href="" class="button">Read Full Post</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
