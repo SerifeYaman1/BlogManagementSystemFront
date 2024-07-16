@@ -8,9 +8,13 @@ import { BlogPost } from '../models/blogPost';
   providedIn: 'root'
 })
 export class BlogPostService {
-  apiUrl = "http://localhost:8080/api/blogposts/getAll";
+  apiUrl = "http://localhost:8080/api/blogposts";
   constructor(private httpClient: HttpClient) { }
   getBlogPosts():Observable<ListResponseModel<BlogPost>> {
-    return this.httpClient.get<ListResponseModel<BlogPost>>(this.apiUrl)
+    return this.httpClient.get<ListResponseModel<BlogPost>>(`${this.apiUrl}/getAll`)
   }
+  createBlogPost(blogPost: BlogPost): Observable<ListResponseModel<BlogPost>> {
+    return this.httpClient.post<ListResponseModel<BlogPost>>(`${this.apiUrl}/create`, blogPost);
+  }
+
 }

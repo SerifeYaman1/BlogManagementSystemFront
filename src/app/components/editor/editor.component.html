@@ -1,0 +1,9 @@
+<div class="main-container">
+  <form [formGroup]="createBlogPostForm">
+  <app-profile-nav (click)="saveBlog()"></app-profile-nav>
+  <div class="editor-container">
+    <input type="text" class="title" placeholder="Title" formControlName="title">
+    <textarea class="story" placeholder="Tell your story..." formControlName="content"></textarea>
+  </div>
+</form>
+</div>
