@@ -1,9 +1,11 @@
-<div class="main-container">
-  <form [formGroup]="createBlogPostForm">
-  <app-profile-nav (click)="saveBlog()"></app-profile-nav>
-  <div class="editor-container">
-    <input type="text" class="title" placeholder="Title" formControlName="title">
-    <textarea class="story" placeholder="Tell your story..." formControlName="content"></textarea>
+<app-basic-layout>
+<div class="editor-container">
+  <app-profile-nav (publishEvent)="publishContent()"></app-profile-nav>
+  <div class="main">
+    <form [formGroup]="createBlogPostForm" (ngSubmit)="publishContent()">
+      <input type="text" placeholder="Title" formControlName="title" class="title-input">
+      <textarea placeholder="Write your content here..." formControlName="content" class="content-input"></textarea>
+    </form>
   </div>
-</form>
 </div>
+</app-basic-layout>

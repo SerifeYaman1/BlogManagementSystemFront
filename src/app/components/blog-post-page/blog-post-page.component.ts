@@ -3,11 +3,12 @@ import { BlogPost } from '../../models/blogPost';
 import { CommonModule } from '@angular/common';
 import { BlogPostService } from '../../services/blog-post.service';
 import { HttpClientModule } from '@angular/common/http';
+import { PaginationComponent } from '../pagination/pagination.component';
 
 @Component({
   selector: 'app-blog-post-page',
   standalone: true,
-  imports: [CommonModule,HttpClientModule],
+  imports: [CommonModule,HttpClientModule,PaginationComponent],
   providers:[BlogPostService],
   templateUrl: './blog-post-page.component.html',
   styleUrl: './blog-post-page.component.css'

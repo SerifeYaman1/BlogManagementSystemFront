@@ -5,6 +5,7 @@ export interface BlogPost {
     likesCount: number,
     commentsCount: number,
     authorName: string,
+    authorId:number
     // cardImageUrl:string,
     // authorImageUrl:string,
     // categoryName:string

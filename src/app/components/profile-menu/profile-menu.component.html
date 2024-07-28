@@ -1,20 +1,16 @@
-<div class="profile-menu">
-  <img src="path_to_profile_image.jpg" alt="Profile Image">
-  <p>Şerife Yaman</p>
-  <p></p>
-  <ul>
-    <li>Write</li>
-    <li>Profile</li>
-    <li>Library</li>
-    <li>Stories</li>
-    <li>Stats</li>
-    <li>Settings</li>
-    <li>Refine recommendations</li>
-    <li>Manage publications</li>
-    <li>Help</li>
-    <li>Apply to the Partner Program</li>
-    <li>Become a member</li>
-    <li>Sign out</li>
-  </ul>
+<div class="profile-nav" (mouseenter)="toggleDropdown(true)" (mouseleave)="toggleDropdown(false)">
+  <img src="/src/assets/card/pexels-sinileunen-6039876.jpg"   alt="Profile Image" class="profile-img">
+  <div class="dropdown-content" [ngClass]="{'show': isDropdownVisible}">
+    <a href="#">Profile</a>
+    <a href="#">Library</a>
+    <a href="#">Stories</a>
+    <a href="#">Stats</a>
+    <a href="#">Settings</a>
+    <a href="#">Refine recommendations</a>
+    <a href="#">Manage publications</a>
+    <a href="#">Help</a>
+    <a href="#">Apply to the Partner Program</a>
+    <a href="#">Become a member</a>
+    <a href="#">Sign out</a>
+  </div>
 </div>
-

@@ -6,17 +6,17 @@ import { FormBuilder, FormGroup, FormsModule, ReactiveFormsModule, Validators } 
 import { BlogPostService } from '../../services/blog-post.service';
 import { HttpClientModule } from '@angular/common/http';
 import { BlogPost } from '../../models/blogPost';
+import { BasicLayoutComponent } from "../basic-layout/basic-layout.component";
 
 @Component({
   selector: 'app-editor',
   standalone: true,
-  imports: [CommonModule, HttpClientModule, ProfileNavComponent, ProfileMenuComponent, ReactiveFormsModule],
+  imports: [CommonModule, HttpClientModule, ProfileNavComponent, ProfileMenuComponent, ReactiveFormsModule, BasicLayoutComponent],
   providers:[BlogPostService],
   templateUrl: './editor.component.html',
   styleUrls: ['./editor.component.css']
 })
 export class EditorComponent implements OnInit {
-  posts: BlogPost[] = [];
   createBlogPostForm: FormGroup;
 
   constructor(private blogPostService: BlogPostService, private fb: FormBuilder) { }
@@ -31,12 +31,12 @@ export class EditorComponent implements OnInit {
       releaseDate: [new Date().toISOString(), Validators.required], // Otomatik tarih ayarlama
       likesCount: [0],
       commentsCount: [0],
-      authorName: ["Anonymous"] // Varsayılan olarak isimsiz kullanıcı
+      authorId: [2] // Varsayılan olarak isimsiz kullanıcı
     });
   }
-  saveBlog() {
+  publishContent() {
     if (this.createBlogPostForm.valid) {
-      let blogPost: BlogPost = this.createBlogPostForm.value;
+      const blogPost: BlogPost = this.createBlogPostForm.value;
       this.blogPostService.createBlogPost(blogPost).subscribe(response => {
         console.log("Blog post created:", response);
         // İşlemler veya yönlendirme

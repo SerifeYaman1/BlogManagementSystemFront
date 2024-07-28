@@ -1,24 +1,8 @@
-<nav>
-    <div class="brand">Medium</div>
-    <div class="menu">
-      <button class="publish-button">Publish</button>
-      <img src="path_to_profile_image.jpg" class="profile-image" alt="Profile Image">
-      <div class="dropdown-menu">
-        <ul>
-          <li>Write</li>
-          <li>Profile</li>
-          <li>Library</li>
-          <li>Stories</li>
-          <li>Stats</li>
-          <li>Settings</li>
-          <li>Refine recommendations</li>
-          <li>Manage publications</li>
-          <li>Help</li>
-          <li>Apply to the Partner Program</li>
-          <li>Become a member</li>
-          <li>Sign out</li>
-        </ul>
-      </div>
-    </div>
-  </nav>
+<div class="nav-container">
+  <span class="medium-logo">Medium</span>
+  <div class="nav-right">
+    <button class="publish-btn" (click)="publish()">Publish</button>
+    <app-profile-menu></app-profile-menu>
+  </div>
+</div>
   
